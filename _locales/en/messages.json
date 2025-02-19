@@ -1,0 +1,10 @@
+{
+  "extensionName": { "message": "Smart Summarizer Sidebar" },
+  "extensionDesc": { "message": "Generates web page summaries using Gemini AI. It's free!" },
+  "sidebarTitle": { "message": "Smart Summarizer" },
+  "loadingMessage": { "message": "Analizing content..." },
+  "errorGeneric": { "message": "Error generating summary" },
+  "errorAPIKey": { "message": "Configure your Gemini API Key" },
+  "errorNoSummary": { "message": "We couldn't generate a summary" },
+  "retryButton": { "message": "Retry" }
+}

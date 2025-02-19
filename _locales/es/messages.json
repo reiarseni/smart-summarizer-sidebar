@@ -1,0 +1,10 @@
+{
+  "extensionName": { "message": "Resumen Inteligente" },
+  "extensionDesc": { "message": "Genera resúmenes de páginas web utilizando Gemini AI. ¡Es gratis!" },
+  "sidebarTitle": { "message": "Resumen Inteligente" },
+  "loadingMessage": { "message": "Analizando contenido..." },
+  "errorGeneric": { "message": "Error al generar el resumen" },
+  "errorAPIKey": { "message": "Configurar tu API Key de Gemini" },
+  "errorNoSummary": { "message": "No se pudo generar el resumen" },
+  "retryButton": { "message": "Reintentar" }
+}
