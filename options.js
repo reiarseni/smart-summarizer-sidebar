@@ -1,4 +1,4 @@
-import CONSTANTS from "./utils/constants";
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   const apiKeyInput = document.getElementById('apiKey');
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 savePromptButton.addEventListener('click', function() {
 
   const template = promptElement.value.trim();
-  if (template.includes('{WORD_LIMIT}' ,CONSTANTS.WORD_LIMIT) && template.includes('{MAX_CONTENT_LENGTH}' , CONSTANTS.MAX_CONTENT_LENGTH)) {
-    chrome.storage.local.set({ 'promptTemplate': template }, function() {
+  if (template.includes('{WORD_LIMIT}' ) && template.includes('{MAX_CONTENT_LENGTH}')) {
+    chrome.storage.local.set({ 'promptTemplate': template }, function () {
       alert('Plantilla guardada correctamente.');
     });
   } else {
