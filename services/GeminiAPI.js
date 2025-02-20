@@ -11,12 +11,13 @@ class GeminiAPI {
 
   async generateSummary(content) {
     await this.initialize();
+    const payload = await this.buildPayload(content);
     const response = await fetch(
       `${CONSTANTS.API_BASE_URL}/${CONSTANTS.MODEL_NAME}:generateContent?key=${this.apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.buildPayload(content))
+        body: JSON.stringify(payload)
       }
     );
     
@@ -26,22 +27,27 @@ class GeminiAPI {
     return this.parseResponse(data);
   }
 
-  buildPayload(content) {
+  async buildPayload(content) {
+    const result = await chrome.storage.local.get('promptTemplate');
+    const promptTemplate = result.promptTemplate;
 
-    //console.log(helpers.truncateContent(content));
+    const template = promptTemplate || `Genera un resumen profesional en lenguaje español 
+      tu decides la longitud del resumen en dependencia de la longitud del contenido
+      pero la longitud del resumen debe ser de menos de {WORD_LIMIT} palabras, 
+      luego del resumen se deben agregar una sección listado de puntos claves con no mas de 10 Puntos Claves,
+      al final del resumen se debe agregar una sección de conclusiones,
+      determinar el mejor titulo posible para el contenido 
+      toda tu respuesta debe estar formateada usando markdown,
+      en el resumen debes mantener los puntos clave del siguiente contenido:\n\n{CONTENT}`;
 
-    //TODO: Poder cambiar el idioma
+    const prompt = template.replace('{WORD_LIMIT}', CONSTANTS.WORD_LIMIT)
+      .replace('{MAX_CONTENT_LENGTH}', CONSTANTS.MAX_CONTENT_LENGTH)
+      .replace('{CONTENT}', helpers.truncateContent(content));
+
     return {
       contents: [{
         parts: [{
-          text: `Genera un resumen profesional en lenguaje español 
-             tu decides la longitud del resumen en dependencia de la longitud del contenido
-             pero la longitud del resumen debe ser de menos de ${CONSTANTS.WORD_LIMIT} palabras, 
-             luego del resumen se deben agregar una sección listado de puntos claves con no mas de 10 Puntos Claves,
-             al final del resumen se debe agregar una sección de conclusiones,
-             determinar el mejor titulo posible para el contenido 
-             toda tu respuesta debe estar formateada usando markdown,
-             en el resumen debes mantener los puntos clave del siguiente contenido:\n\n${helpers.truncateContent(content)}`
+          text: prompt
         }]
       }],
       generationConfig: {
@@ -58,3 +64,4 @@ class GeminiAPI {
     return data.candidates[0].content.parts[0].text;
   }
 }
+

@@ -1,3 +1,4 @@
+
 class ContentExtractor {
   constructor() {
     this.semanticTags = CONSTANTS.SEMANTIC_TAGS;

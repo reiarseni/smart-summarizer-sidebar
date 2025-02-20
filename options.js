@@ -1,7 +1,10 @@
+import CONSTANTS from "./utils/constants";
+
 document.addEventListener('DOMContentLoaded', async () => {
   const apiKeyInput = document.getElementById('apiKey');
   const saveButton = document.getElementById('save');
   const status = document.getElementById('status');
+
 
   // Cargar API Key existente
   const { apiKey } = await chrome.storage.sync.get('apiKey');
@@ -26,3 +29,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     setTimeout(() => status.textContent = '', 3000);
   }
 });
+
+ // Esta parte la he implementado 
+ const promptElement = document.getElementById('prompt');
+ const savePromptButton = document.getElementById('saveprompt');
+ const promptStatus = document.getElementById('promptstatus');
+
+
+ // Reemplazar los placeholders con los valores correspondientes
+
+savePromptButton.addEventListener('click', function() {
+
+  const template = promptElement.value.trim();
+  if (template.includes('{WORD_LIMIT}' ,CONSTANTS.WORD_LIMIT) && template.includes('{MAX_CONTENT_LENGTH}' , CONSTANTS.MAX_CONTENT_LENGTH)) {
+    chrome.storage.local.set({ 'promptTemplate': template }, function() {
+      alert('Plantilla guardada correctamente.');
+    });
+  } else {
+    alert('La plantilla debe contener los placeholders {WORD_LIMIT} y {MAX_CONTENT_LENGTH}.');
+  }
+});
+
+ // Hasta acá
+
