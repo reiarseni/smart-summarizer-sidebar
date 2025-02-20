@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', async () => {
   const apiKeyInput = document.getElementById('apiKey');
   const saveButton = document.getElementById('save');
@@ -35,15 +34,22 @@ document.addEventListener('DOMContentLoaded', async () => {
  const savePromptButton = document.getElementById('saveprompt');
  const promptStatus = document.getElementById('promptstatus');
 
+ const maxContentLength = document.getElementById('maxContentLength');
+ const wordLimit = document.getElementById('wordLimit');
 
  // Reemplazar los placeholders con los valores correspondientes
 
 savePromptButton.addEventListener('click', function() {
 
   const template = promptElement.value.trim();
-  if (template.includes('{WORD_LIMIT}' ) && template.includes('{MAX_CONTENT_LENGTH}')) {
+  if (template.includes('wordLimit') && template.includes('{maxContentLength}')) {
     chrome.storage.local.set({ 'promptTemplate': template }, function () {
-      alert('Plantilla guardada correctamente.');
+      alert('Plantilla personalizada guardada correctamente.');
+    });
+  }
+ else if (template.includes('{WORD_LIMIT}' ) && template.includes('{MAX_CONTENT_LENGTH}')) {
+    chrome.storage.local.set({ 'promptTemplate': template }, function () {
+      alert('Plantilla default guardada correctamente.');
     });
   } else {
     alert('La plantilla debe contener los placeholders {WORD_LIMIT} y {MAX_CONTENT_LENGTH}.');

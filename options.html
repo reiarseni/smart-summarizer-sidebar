@@ -24,7 +24,7 @@
       color: #1a1a1a;
     }
     
-    input[type="password"] {
+    input {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
@@ -51,6 +51,15 @@
       margin-top: 10px;
       color: #34a853;
     }
+    .cont{
+      background-color: brown;
+      color: white;
+      display: flex;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px ;
+      
+    }
   </style>
 </head>
 <body>
@@ -64,13 +73,26 @@
     <button id="save">Guardar Configuración</button>
 
     <div id="status"></div>
-    <div>
-      <label for="prompt">Editar Plantilla de Prompt:</label>
+   
+      <label for="prompt"><h1> Editar Plantilla de Prompt:</h1></label>
+      <br>
       <textarea id="prompt" rows="10" cols="50" placeholder="Ingresa tu plantilla de prompt"></textarea>
       <div id="promptstatus"></div>
-      
+      <div class="cont" >Si quiere los datos de Default, escriba: {WORD_LIMIT} {MAX_CONTENT_LENGTH}<br/>
+        Si quiere los datos de Personalizados, escriba: {wordLimit} , {maxContentLength} y {CONTENT} e intoduzcalos
+      </div>
+    <div>
+      <label for="wordLimit"><h2> Límite de Palabras:</h2></label>
+      <br>
+      <input type="number" id="wordLimit" placeholder="Ingresa la cantidad de palabras minimas que deseas en el resumen">
+       <br
+     <label for="maxContentLength"><h2> Límite de Palabras en el Contenido:</h2></label>
+      <br>
+     <input type="number" id="maxContentLength" placeholder="Ingresa la cantidad de palabras maximas que deseas en el resumen">
     </div>
     <button id="saveprompt">Guardar Cambios</button>
+    </div>
+    
     
   </div>
   <script src="options.js"></script>

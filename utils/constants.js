@@ -2,8 +2,8 @@ const CONSTANTS = {
   SIDEBAR_ID: 'smart-summarizer-sidebar',
   API_BASE_URL: 'https://generativelanguage.googleapis.com/v1beta/models',
   MODEL_NAME: 'gemini-1.5-flash',
-  WORD_LIMIT: 500,
-  MAX_CONTENT_LENGTH: 1000,
+  WORD_LIMIT : 500,
+  MAX_CONTENT_LENGTH:  1000,
 
 
   SEMANTIC_TAGS: [
