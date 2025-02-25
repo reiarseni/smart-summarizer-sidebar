@@ -1,9 +1,7 @@
-
 document.addEventListener('DOMContentLoaded', async () => {
   const apiKeyInput = document.getElementById('apiKey');
   const saveButton = document.getElementById('save');
   const status = document.getElementById('status');
-
 
   // Cargar API Key existente
   const { apiKey } = await chrome.storage.sync.get('apiKey');
@@ -31,30 +29,43 @@ document.addEventListener('DOMContentLoaded', async () => {
 
  // Esta parte la he implementado 
  const promptElement = document.getElementById('prompt');
- const savePromptButton = document.getElementById('saveprompt');
+ const savePromptButton = document.getElementById('save');
  const promptStatus = document.getElementById('promptstatus');
-
  const maxContentLength = document.getElementById('maxContentLength');
  const wordLimit = document.getElementById('wordLimit');
 
- // Reemplazar los placeholders con los valores correspondientes
 
-savePromptButton.addEventListener('click', function() {
+ savePromptButton.addEventListener('click', function() {
 
   const template = promptElement.value.trim();
-  if (template.includes('wordLimit') && template.includes('{maxContentLength}')) {
-    chrome.storage.local.set({ 'promptTemplate': template }, function () {
-      alert('Plantilla personalizada guardada correctamente.');
-    });
+  const lenguage = document.getElementById('language').value;
+  
+  let languageText;
+  switch (lenguage) {
+    case 'en':
+      languageText = "en inglés";
+      break;
+    case 'fr':
+      languageText = "en francés";
+      break;
+    case 'pt':
+      languageText = "en portugués";
+      break;
+    default:
+      languageText = "en español";
   }
- else if (template.includes('{WORD_LIMIT}' ) && template.includes('{MAX_CONTENT_LENGTH}')) {
-    chrome.storage.local.set({ 'promptTemplate': template }, function () {
-      alert('Plantilla default guardada correctamente.');
+
+  const finalTemplate = template;
+   
+  if (finalTemplate.includes('{wordLimit}') && finalTemplate.includes('{maxContentLength}') && finalTemplate.includes('{lenguage}') ) {
+    chrome.storage.local.set({ 'promptTemplate': finalTemplate }, function () {
+      alert("Plantilla personalizada guardada correctamente.");
+    });
+  } else if (finalTemplate.includes('{WORD_LIMIT}') && finalTemplate.includes('{MAX_CONTENT_LENGTH}') && finalTemplate.includes('{LANGUAGE}')) {
+    chrome.storage.local.set({ 'promptTemplate': finalTemplate }, function () {
+      alert("Plantilla default guardada correctamente.");
     });
   } else {
     alert('La plantilla debe contener los placeholders {WORD_LIMIT} y {MAX_CONTENT_LENGTH}.');
   }
 });
-
- // Hasta acá
-

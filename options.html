@@ -70,27 +70,35 @@
 
     <input type="password" id="apiKey" placeholder="Ingresa tu API Key de Google Gemini">
 
-    <button id="save">Guardar Configuración</button>
+    
 
     <div id="status"></div>
    
       <label for="prompt"><h1> Editar Plantilla de Prompt:</h1></label>
-      <br>
       <textarea id="prompt" rows="10" cols="50" placeholder="Ingresa tu plantilla de prompt"></textarea>
-      <div id="promptstatus"></div>
+     
       <div class="cont" >Si quiere los datos de Default, escriba: {WORD_LIMIT} {MAX_CONTENT_LENGTH}<br/>
         Si quiere los datos de Personalizados, escriba: {wordLimit} , {maxContentLength} y {CONTENT} e intoduzcalos
       </div>
     <div>
       <label for="wordLimit"><h2> Límite de Palabras:</h2></label>
-      <br>
       <input type="number" id="wordLimit" placeholder="Ingresa la cantidad de palabras minimas que deseas en el resumen">
-       <br
+       <br>
      <label for="maxContentLength"><h2> Límite de Palabras en el Contenido:</h2></label>
-      <br>
      <input type="number" id="maxContentLength" placeholder="Ingresa la cantidad de palabras maximas que deseas en el resumen">
     </div>
-    <button id="saveprompt">Guardar Cambios</button>
+
+  <label for="language">Selecciona el Idioma:</label>
+  <select id="language">
+    
+    <option id="en" value="en">Inglés</option>
+    <option id="fr" value="fr">Francés</option>
+    <option id="pt" value="pt">Portugués</option>
+    <!-- Añadir más opciones según los idiomas soportados -->
+  </select>
+  <div id="promptstatus"></div>
+    <br>
+    <button id="save">Guardar Configuración</button>
     </div>
     
     
