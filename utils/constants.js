@@ -4,7 +4,7 @@ const CONSTANTS = {
   MODEL_NAME: 'gemini-1.5-flash',
   WORD_LIMIT : 500,
   MAX_CONTENT_LENGTH:  1000,
-  LANGUAGE:"español",
+
 
   SEMANTIC_TAGS: [
     'article', 

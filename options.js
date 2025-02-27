@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
- // Esta parte la he implementado 
+
  const promptElement = document.getElementById('prompt');
  const savePromptButton = document.getElementById('save');
  const promptStatus = document.getElementById('promptstatus');
@@ -38,30 +38,14 @@ document.addEventListener('DOMContentLoaded', async () => {
  savePromptButton.addEventListener('click', function() {
 
   const template = promptElement.value.trim();
-  const lenguage = document.getElementById('language').value;
-  
-  let languageText;
-  switch (lenguage) {
-    case 'en':
-      languageText = "en inglés";
-      break;
-    case 'fr':
-      languageText = "en francés";
-      break;
-    case 'pt':
-      languageText = "en portugués";
-      break;
-    default:
-      languageText = "en español";
-  }
 
   const finalTemplate = template;
    
-  if (finalTemplate.includes('{wordLimit}') && finalTemplate.includes('{maxContentLength}') && finalTemplate.includes('{lenguage}') ) {
+  if (finalTemplate.includes('{wordLimit}') && finalTemplate.includes('{maxContentLength}')  ){
     chrome.storage.local.set({ 'promptTemplate': finalTemplate }, function () {
       alert("Plantilla personalizada guardada correctamente.");
     });
-  } else if (finalTemplate.includes('{WORD_LIMIT}') && finalTemplate.includes('{MAX_CONTENT_LENGTH}') && finalTemplate.includes('{LANGUAGE}')) {
+  } else if (finalTemplate.includes('{WORD_LIMIT}') && finalTemplate.includes('{MAX_CONTENT_LENGTH}')) {
     chrome.storage.local.set({ 'promptTemplate': finalTemplate }, function () {
       alert("Plantilla default guardada correctamente.");
     });

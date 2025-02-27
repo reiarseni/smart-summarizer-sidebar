@@ -6,5 +6,10 @@
   "errorGeneric": { "message": "Error al generar el resumen" },
   "errorAPIKey": { "message": "Configurar tu API Key de Gemini" },
   "errorNoSummary": { "message": "No se pudo generar el resumen" },
-  "retryButton": { "message": "Reintentar" }
-}
+  "retryButton": { "message": "Reintentar" },
+  "apiKeyLabel": { "message": "API Key de Gemini" },
+  "apiKeyPlaceholder": { "message": "Ingresa tu API Key de Gemini" },
+  "saveButton": { "message": "Guardar" },
+  "textAPI": { "message": "Genera un resumen profesional en español del siguiente contenido: tu decides la longitud del resumen en dependencia de la longitud del contenido pero la longitud del resumen debe ser de menos de {WORD_LIMIT} palabras, con {MAX_CONTENT_LENGTH} caracteres luego del resumen se deben agregar una sección listado de puntos claves con no mas de 10 Puntos Claves, al final del resumen se debe agregar una sección de conclusiones, determinar el mejor titulo posible para el contenido  toda tu respuesta debe estar formateada usando markdown, en el resumen debes mantener los puntos clave del siguiente contenido:\n\n{CONTENT}" }
+
+  }

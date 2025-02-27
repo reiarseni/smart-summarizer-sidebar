@@ -26,23 +26,29 @@ class GeminiAPI {
     const data = await response.json();
     return this.parseResponse(data);
   }
+  /* cree la variable textAPI la cual en español indica que se debe generar un resumen profesional de un contenido
+  *
+  *
+  */
 
   async buildPayload(content) {
+
     const result = await chrome.storage.local.get('promptTemplate');
     const promptTemplate = result.promptTemplate;
 
-    const defaulttemplate = promptTemplate || `Genera un resumen profesional en {LANGUAGE} del siguiente contenido:
-      tu decides la longitud del resumen en dependencia de la longitud del contenido
-      pero la longitud del resumen debe ser de menos de {WORD_LIMIT} palabras, con {MAX_CONTENT_LENGTH} caracteres
-      luego del resumen se deben agregar una sección listado de puntos claves con no mas de 10 Puntos Claves,
-      al final del resumen se debe agregar una sección de conclusiones,
-      determinar el mejor titulo posible para el contenido 
-      toda tu respuesta debe estar formateada usando markdown,
-      en el resumen debes mantener los puntos clave del siguiente contenido:\n\n{CONTENT}`;
+    const textAPI=  `Genera un resumen profesional en español del siguiente contenido:
+    tu decides la longitud del resumen en dependencia de la longitud del contenido
+    pero la longitud del resumen debe ser de menos de {WORD_LIMIT} palabras, con {MAX_CONTENT_LENGTH} caracteres
+    luego del resumen se deben agregar una sección listado de puntos claves con no mas de 10 Puntos Claves,
+    al final del resumen se debe agregar una sección de conclusiones,
+    determinar el mejor titulo posible para el contenido 
+    toda tu respuesta debe estar formateada usando markdown,
+    en el resumen debes mantener los puntos clave del siguiente contenido:\n\n{CONTENT}`;
+
+    const defaulttemplate = promptTemplate || textAPI
 
     const prompt = defaulttemplate.replace('{WORD_LIMIT}' || '{wordLimit}' , CONSTANTS.WORD_LIMIT )
     .replace('{MAX_CONTENT_LENGTH}' || '{maxContentLength}' ,  CONSTANTS.MAX_CONTENT_LENGTH)
-    .replace('{LANGUAGE}' || '{lenguage}', CONSTANTS.LANGUAGE)
       .replace('{CONTENT}', helpers.truncateContent(content));
 
     return {
