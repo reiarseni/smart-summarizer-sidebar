@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const saveButton = document.getElementById('save');
   const status = document.getElementById('status');
 
+  // Aplicar traducciones para q el html funcione y me traduzca tambien los input y los textarea
+
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+      element.placeholder = chrome.i18n.getMessage(key);
+    } else {
+      element.textContent = chrome.i18n.getMessage(key);
+    }
+
+  });
   // Cargar API Key existente
   const { apiKey } = await chrome.storage.sync.get('apiKey');
   apiKeyInput.value = apiKey || '';
@@ -10,14 +21,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Manejador de guardado
   saveButton.addEventListener('click', async () => {
     const apiKey = apiKeyInput.value.trim();
-    
+
+    /*utilizamos el chorme.i18n (utiliza la libreria q sea del idioma del Chrome) para 
+    * coger de locales tanto los status como las alertas de diferentes idiomas 
+    */
     if (!apiKey) {
-      showStatus('¡Debes ingresar una API Key!', 'error');
+      var statusMessage = chrome.i18n.getMessage("status_message");
+      showStatus(statusMessage, 'error');
       return;
     }
 
     await chrome.storage.sync.set({ apiKey });
-    showStatus('¡Configuración guardada correctamente!', 'success');
+    var statusMessage1 = chrome.i18n.getMessage("status_message1");
+      showStatus(statusMessage1, 'success');
   });
 
   function showStatus(message, type = 'info') {
@@ -43,13 +59,13 @@ document.addEventListener('DOMContentLoaded', async () => {
    
   if (finalTemplate.includes('{wordLimit}') && finalTemplate.includes('{maxContentLength}')  ){
     chrome.storage.local.set({ 'promptTemplate': finalTemplate }, function () {
-      alert("Plantilla personalizada guardada correctamente.");
+      var alertMessage = chrome.i18n.getMessage("alert_message");
+      alert( alertMessage);
     });
   } else if (finalTemplate.includes('{WORD_LIMIT}') && finalTemplate.includes('{MAX_CONTENT_LENGTH}')) {
     chrome.storage.local.set({ 'promptTemplate': finalTemplate }, function () {
-      alert("Plantilla default guardada correctamente.");
+      var alertMessage1 = chrome.i18n.getMessage("alert_message1");
+      alert( alertMessage1);
     });
-  } else {
-    alert('La plantilla debe contener los placeholders {WORD_LIMIT} y {MAX_CONTENT_LENGTH}.');
-  }
+  };
 });

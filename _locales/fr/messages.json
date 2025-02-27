@@ -1,0 +1,93 @@
+{
+    "extensionName": {
+      "message": "Barre latérale de résumé intelligent"
+    },
+    "extensionDesc": {
+      "message": "Génère des résumés de pages web en utilisant Gemini AI. C'est gratuit!"
+    },
+    "sidebarTitle": {
+      "message": "Résumé intelligent"
+    },
+    "loadingMessage": {
+      "message": "Analyse du contenu..."
+    },
+    "errorGeneric": {
+      "message": "Erreur de génération de résumé"
+    },
+    "errorAPIKey": {
+      "message": "Configurez votre clé API Gemini"
+    },
+    "errorNoSummary": {
+      "message": "Nous n'avons pas pu générer de résumé"
+    },
+    "retryButton": {
+      "message": "Réessayer"
+    },
+    "apiKeyLabel": {
+      "message": "Clé API Gemini"
+    },
+    "apiKeyPlaceholder": {
+      "message": "Entrez votre clé API Gemini"
+    },
+    "saveButton": {
+      "message": "Enregistrer"
+    },
+    "textAPI": {
+      "message": "Générez un résumé professionnel en Français du contenu suivant : Vous décidez de la longueur du résumé en fonction de la longueur du contenu, mais la longueur du résumé doit être inférieure à {WORD_LIMIT} mots, avec {MAX_CONTENT_LENGTH} caractères. Après le résumé, une section listant les points clés avec un maximum de 10 points clés doit être ajoutée. À la fin du résumé, une section de conclusion doit être ajoutée. Déterminez le meilleur titre possible pour le contenu. Toute votre réponse doit être formatée en utilisant markdown. Dans le résumé, vous devez conserver les points clés du contenu suivant :\n\n{CONTENT}"
+    },
+    "apiKeyRequired": {
+      "message": "Vous devez entrer une clé API !"
+    },
+    "configSaved": {
+      "message": "Configuration enregistrée avec succès !"
+    },
+    "customTemplateSaved": {
+      "message": "Modèle personnalisé enregistré avec succès."
+    },
+    "defaultTemplateSaved": {
+      "message": "Modèle par défaut enregistré avec succès."
+    },
+    "optionsTitle": {
+      "message": "Barre latérale de résumé intelligent - Options"
+    },
+    "optionsHeader": {
+      "message": "Configuration de la barre latérale de résumé intelligent"
+    },
+    "promptLabel": {
+      "message": "Modèle de demande :"
+    },
+    "maxContentLengthLabel": {
+      "message": "Longueur maximale du contenu :"
+    },
+    "promptPlaceholder": {
+      "message": "Entrez votre modèle de demande"
+    },
+    "wordLimitPlaceholder": {
+      "message": "Entrez la limite de mots pour le résumé"
+    },
+    "helpPlaceholder": {
+      "message": "Si vous voulez les données par défaut, tapez : {WORD_LIMIT} {MAX_CONTENT_LENGTH}. Si vous voulez des données personnalisées, tapez : {wordLimit}, {maxContentLength} et {CONTENT} et entrez-les."
+    },
+    "maxContentLengthPlaceholder": {
+      "message": "Entrez la longueur maximale du contenu"
+    },
+    "alert_message": {
+      "message": "Modèle personnalisé enregistré avec succès."
+    },
+    "alert_message1": {
+      "message": "Modèle par défaut enregistré avec succès."
+    },
+    "status_message": {
+      "message": "Veuillez entrer une clé API ici"
+    },
+    "status_message1": {
+      "message": "Configuration enregistrée avec succès !"
+    },
+    "savebutton2": {
+      "message": "Enregistrer"
+    },
+    "wordLimitLabel": {
+      "message": "Limite de mots pour le résumé :"
+    }
+  }
+  

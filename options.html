@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Configuración del Resumidor</title>
+  <title data-i18n="optionsTitle">Configuración del Resumidor</title>
   <style>
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
@@ -64,32 +64,32 @@
 </head>
 <body>
   <div class="container">
-    <h1>Configuración de API</h1>
+    <h1 data-i18n="optionsHeader">Configuración de API</h1>
 
-    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Si no tiene APi key, buscala aqui</a>
+    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" data-i18n="apiKeyLabel">Si no tiene APi key, buscala aqui</a>
 
-    <input type="password" id="apiKey" placeholder="Ingresa tu API Key de Google Gemini">
+    <input type="password" id="apiKey" data-i18n="apiKeyPlaceholder">
 
     
 
     <div id="status"></div>
    
-      <label for="prompt"><h1> Editar Plantilla de Prompt:</h1></label>
-      <textarea id="prompt" rows="10" cols="50" placeholder="Ingresa tu plantilla de prompt"></textarea>
+      <label for="prompt"><h1 data-i18n="promptLabel">Plantilla de Prompt:</h1></label>
+      <textarea id="prompt" rows="10" cols="50" data-i18n="promptPlaceholder" placeholder="Ingresa tu plantilla de prompt"></textarea>
      
-      <div class="cont" >Si quiere los datos de Default, escriba: {WORD_LIMIT} {MAX_CONTENT_LENGTH}<br/>
+      <div class="cont"  data-i18n="helpPlaceholder">Si quiere los datos de Default, escriba: {WORD_LIMIT} {MAX_CONTENT_LENGTH}
         Si quiere los datos de Personalizados, escriba: {wordLimit} , {maxContentLength} y {CONTENT} e intoduzcalos
       </div>
     <div>
-      <label for="wordLimit"><h2> Límite de Palabras:</h2></label>
-      <input type="number" id="wordLimit" placeholder="Ingresa la cantidad de palabras minimas que deseas en el resumen">
+      <label for="wordLimit" ><h2 data-i18n="wordLimitLabel"> Límite de Palabras:</h2></label>
+      <input type="number" id="wordLimit" data-i18n="wordLimitPlaceholder">
        <br>
-     <label for="maxContentLength"><h2> Límite de Palabras en el Contenido:</h2></label>
-     <input type="number" id="maxContentLength" placeholder="Ingresa la cantidad de palabras maximas que deseas en el resumen">
+     <label for="maxContentLength"><h2 data-i18n="maxContentLengthLabel"> Límite de Palabras en el Contenido:</h2></label>
+     <input type="number" id="maxContentLength" data-i18n="maxContentLengthPlaceholder" >
     </div>
   <div id="promptstatus"></div>
     <br>
-    <button id="save">Guardar Configuración</button>
+    <button id="save" data-i18n="saveButton2">Guardar Configuración</button>
     </div>
 
   </div>

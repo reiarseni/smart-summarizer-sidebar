@@ -1,0 +1,93 @@
+{
+    "extensionName": {
+      "message": "Barra Lateral de Resumo Inteligente"
+    },
+    "extensionDesc": {
+      "message": "Gera resumos de páginas da web usando Gemini AI. É grátis!"
+    },
+    "sidebarTitle": {
+      "message": "Resumo Inteligente"
+    },
+    "loadingMessage": {
+      "message": "Analisando conteúdo..."
+    },
+    "errorGeneric": {
+      "message": "Erro ao gerar resumo"
+    },
+    "errorAPIKey": {
+      "message": "Configure sua chave API Gemini"
+    },
+    "errorNoSummary": {
+      "message": "Não conseguimos gerar um resumo"
+    },
+    "retryButton": {
+      "message": "Tentar novamente"
+    },
+    "apiKeyLabel": {
+      "message": "Chave API Gemini"
+    },
+    "apiKeyPlaceholder": {
+      "message": "Digite sua chave API Gemini"
+    },
+    "saveButton": {
+      "message": "Salvar"
+    },
+    "textAPI": {
+      "message": "Gere um resumo profissional em Português do seguinte conteúdo: Você decide o comprimento do resumo dependendo do comprimento do conteúdo, mas o comprimento do resumo deve ser inferior a {WORD_LIMIT} palavras, com {MAX_CONTENT_LENGTH} caracteres. Após o resumo, uma seção listando os pontos principais com no máximo 10 pontos principais deve ser adicionada. No final do resumo, uma seção de conclusão deve ser adicionada. Determine o melhor título possível para o conteúdo. Toda a sua resposta deve ser formatada usando markdown. No resumo, você deve manter os pontos principais do seguinte conteúdo:\n\n{CONTENT}"
+    },
+    "apiKeyRequired": {
+      "message": "Você deve inserir uma chave API!"
+    },
+    "configSaved": {
+      "message": "Configuração salva com sucesso!"
+    },
+    "customTemplateSaved": {
+      "message": "Modelo personalizado salvo com sucesso."
+    },
+    "defaultTemplateSaved": {
+      "message": "Modelo padrão salvo com sucesso."
+    },
+    "optionsTitle": {
+      "message": "Barra Lateral de Resumo Inteligente - Opções"
+    },
+    "optionsHeader": {
+      "message": "Configuração da Barra Lateral de Resumo Inteligente"
+    },
+    "promptLabel": {
+      "message": "Modelo de Solicitação:"
+    },
+    "maxContentLengthLabel": {
+      "message": "Comprimento máximo do conteúdo:"
+    },
+    "promptPlaceholder": {
+      "message": "Digite seu modelo de solicitação"
+    },
+    "wordLimitPlaceholder": {
+      "message": "Digite o limite de palavras para o resumo"
+    },
+    "helpPlaceholder": {
+      "message": "Se você quiser os dados padrão, digite: {WORD_LIMIT} {MAX_CONTENT_LENGTH}. Se você quiser dados personalizados, digite: {wordLimit}, {maxContentLength} e {CONTENT} e insira-os."
+    },
+    "maxContentLengthPlaceholder": {
+      "message": "Digite o comprimento máximo do conteúdo"
+    },
+    "alert_message": {
+      "message": "Modelo personalizado salvo com sucesso."
+    },
+    "alert_message1": {
+      "message": "Modelo padrão salvo com sucesso."
+    },
+    "status_message": {
+      "message": "Por favor, insira uma chave API aqui"
+    },
+    "status_message1": {
+      "message": "Configuração salva com sucesso!"
+    },
+    "savebutton2": {
+      "message": "Salvar"
+    },
+    "wordLimitLabel": {
+      "message": "Limite de palavras para o resumo:"
+    }
+  }
+  
