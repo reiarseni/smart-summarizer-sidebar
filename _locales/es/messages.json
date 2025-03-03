@@ -1,10 +1,92 @@
 {
-  "extensionName": { "message": "Resumen Inteligente" },
-  "extensionDesc": { "message": "Genera resúmenes de páginas web utilizando Gemini AI. ¡Es gratis!" },
-  "sidebarTitle": { "message": "Resumen Inteligente" },
-  "loadingMessage": { "message": "Analizando contenido..." },
-  "errorGeneric": { "message": "Error al generar el resumen" },
-  "errorAPIKey": { "message": "Configurar tu API Key de Gemini" },
-  "errorNoSummary": { "message": "No se pudo generar el resumen" },
-  "retryButton": { "message": "Reintentar" }
+  "extensionName": {
+    "message": "Resumen Inteligente"
+  },
+  "extensionDesc": {
+    "message": "Genera resúmenes de páginas web usando Gemini AI. ¡Es gratis!"
+  },
+  "sidebarTitle": {
+    "message": "Resumen Inteligente"
+  },
+  "loadingMessage": {
+    "message": "Analizando contenido..."
+  },
+  "errorGeneric": {
+    "message": "Error al generar el resumen"
+  },
+  "errorAPIKey": {
+    "message": "Configura tu clave API de Gemini"
+  },
+  "errorNoSummary": {
+    "message": "No pudimos generar un resumen"
+  },
+  "retryButton": {
+    "message": "Reintentar"
+  },
+  "apiKeyLabel": {
+    "message": "Clave API de Gemini"
+  },
+  "apiKeyPlaceholder": {
+    "message": "Introduce tu clave API de Gemini"
+  },
+  "saveButton": {
+    "message": "Guardar"
+  },
+  "textAPI": {
+    "message": "Genera un resumen profesional en español del siguiente contenido: Tú decides la longitud del resumen dependiendo de la longitud del contenido, pero la longitud del resumen debe ser menos de {WORD_LIMIT} palabras, con {MAX_CONTENT_LENGTH} caracteres. Después del resumen, se debe añadir una sección que liste los puntos clave con no más de 10 puntos clave. Al final del resumen se debe añadir una sección de conclusión. Determina el mejor título posible para el contenido. Toda tu respuesta debe estar formateada usando markdown. En el resumen debes mantener los puntos clave del siguiente contenido:\n\n{CONTENT}"
+  },
+  "apiKeyRequired": {
+    "message": "¡Debes ingresar una clave API!"
+  },
+  "configSaved": {
+    "message": "¡Configuración guardada exitosamente!"
+  },
+  "customTemplateSaved": {
+    "message": "Plantilla personalizada guardada exitosamente."
+  },
+  "defaultTemplateSaved": {
+    "message": "Plantilla predeterminada guardada exitosamente."
+  },
+  "optionsTitle": {
+    "message": "Barra Lateral Resumen Inteligente - Opciones"
+  },
+  "optionsHeader": {
+    "message": "Configuración de la Barra Lateral Resumen Inteligente"
+  },
+  "promptLabel": {
+    "message": "Plantilla de solicitud:"
+  },
+  "maxContentLengthLabel": {
+    "message": "Longitud máxima del contenido:"
+  },
+  "promptPlaceholder": {
+    "message": "Introduce tu plantilla de solicitud"
+  },
+  "wordLimitPlaceholder": {
+    "message": "Introduce el límite de palabras para el resumen"
+  },
+  "helpPlaceholder": {
+    "message": "Si quieres los datos predeterminados, escribe: {WORD_LIMIT} {MAX_CONTENT_LENGTH}. Si quieres datos personalizados, escribe: {wordLimit}, {maxContentLength} y {CONTENT} y introdúcelos."
+  },
+  "maxContentLengthPlaceholder": {
+    "message": "Introduce la longitud máxima del contenido"
+  },
+  "alert_message": {
+    "message": "Plantilla personalizada guardada exitosamente."
+  },
+  "alert_message1": {
+    "message": "Plantilla predeterminada guardada exitosamente."
+  },
+  "status_message": {
+    "message": "Por favor, introduce una clave API aquí"
+  },
+  "status_message1": {
+    "message": "¡Configuración guardada exitosamente!"
+  },
+  "savebutton2": {
+    "message": "Guardar"
+  },
+  "wordLimitLabel": {
+    "message": "Límite de palabras para el resumen:"
+  }
 }

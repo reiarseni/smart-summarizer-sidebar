@@ -26,22 +26,21 @@ class GeminiAPI {
     const data = await response.json();
     return this.parseResponse(data);
   }
+  /* cree la variable textAPI para almacenar el mensaje de texto de la API en el archivo de mensajes de Chrome,
+  * reemplazando las variables de sustitución con los valores correspondientes segun el idioma del chrome
+  */
 
   async buildPayload(content) {
+
     const result = await chrome.storage.local.get('promptTemplate');
-    const promptTemplate = result.promptTemplate;
+    var promptTemplate = result.promptTemplate;
 
-    const defaulttemplate = promptTemplate || `Genera un resumen profesional en lenguaje español 
-      tu decides la longitud del resumen en dependencia de la longitud del contenido
-      pero la longitud del resumen debe ser de menos de {WORD_LIMIT} palabras, 
-      luego del resumen se deben agregar una sección listado de puntos claves con no mas de 10 Puntos Claves,
-      al final del resumen se debe agregar una sección de conclusiones,
-      determinar el mejor titulo posible para el contenido 
-      toda tu respuesta debe estar formateada usando markdown,
-      en el resumen debes mantener los puntos clave del siguiente contenido:\n\n{CONTENT}`;
+    var textAPI = chrome.i18n.getMessage("textAPI");
 
-    const prompt = defaulttemplate.replace('{WORD_LIMIT}' || '{wordLimit}', CONSTANTS.WORD_LIMIT )
-      .replace('{MAX_CONTENT_LENGTH}' || '{maxContentLength}', CONSTANTS.MAX_CONTENT_LENGTH)
+    var defaulttemplate = promptTemplate || textAPI;
+
+    var prompt = defaulttemplate.replace('{WORD_LIMIT}' || '{wordLimit}' , CONSTANTS.WORD_LIMIT )
+    .replace('{MAX_CONTENT_LENGTH}' || '{maxContentLength}' ,  CONSTANTS.MAX_CONTENT_LENGTH)
       .replace('{CONTENT}', helpers.truncateContent(content));
 
     return {
@@ -64,4 +63,3 @@ class GeminiAPI {
     return data.candidates[0].content.parts[0].text;
   }
 }
-

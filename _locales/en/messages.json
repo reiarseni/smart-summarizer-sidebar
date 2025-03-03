@@ -1,10 +1,92 @@
 {
-  "extensionName": { "message": "Smart Summarizer Sidebar" },
-  "extensionDesc": { "message": "Generates web page summaries using Gemini AI. It's free!" },
-  "sidebarTitle": { "message": "Smart Summarizer" },
-  "loadingMessage": { "message": "Analizing content..." },
-  "errorGeneric": { "message": "Error generating summary" },
-  "errorAPIKey": { "message": "Configure your Gemini API Key" },
-  "errorNoSummary": { "message": "We couldn't generate a summary" },
-  "retryButton": { "message": "Retry" }
+  "extensionName": {
+    "message": "Smart Summarizer Sidebar"
+  },
+  "extensionDesc": {
+    "message": "Generates web page summaries using Gemini AI. It's free!"
+  },
+  "sidebarTitle": {
+    "message": "Smart Summarizer"
+  },
+  "loadingMessage": {
+    "message": "Analizing content..."
+  },
+  "errorGeneric": {
+    "message": "Error generating summary"
+  },
+  "errorAPIKey": {
+    "message": "Configure your Gemini API Key"
+  },
+  "errorNoSummary": {
+    "message": "We couldn't generate a summary"
+  },
+  "retryButton": {
+    "message": "Retry"
+  },
+  "apiKeyLabel": {
+    "message": "Gemini API Key"
+  },
+  "apiKeyPlaceholder": {
+    "message": "Enter your Gemini API Key"
+  },
+  "saveButton": {
+    "message": "Save"
+  },
+  "textAPI": {
+    "message": "Generate a professional summary in English of the following content: You decide the length of the summary depending on the length of the content but the length of the summary must be less than {WORD_LIMIT} words, with {MAX_CONTENT_LENGTH} characters After the summary, a section listing key points with no more than 10 Key Points should be added. At the end of the summary a conclusion section should be added,  Determine the best possible title for the content  your entire answer must be formatted using markdown,In the summary you must maintain the key points of the following content:\n\n{CONTENT}"
+  },
+  "apiKeyRequired": {
+    "message": "You must enter an API Key!"
+  },
+  "configSaved": {
+    "message": "Configuration saved successfully!"
+  },
+  "customTemplateSaved": {
+    "message": "Custom template saved successfully."
+  },
+  "defaultTemplateSaved": {
+    "message": "Default template saved successfully."
+  },
+  "optionsTitle": {
+    "message": "Smart Summarizer Sidebar - Options"
+  },
+  "optionsHeader": {
+    "message": "Smart Summarizer Sidebar Configuration"
+  },
+  "promptLabel": {
+    "message": "Prompt Template:"
+  },
+  "maxContentLengthLabel": {
+    "message": "Maximum content length:"
+  },
+  "promptPlaceholder": {
+    "message": "Enter your prompt template"
+  },
+  "wordLimitPlaceholder": {
+    "message": "Enter the word limit for the summary"
+  },
+  "helpPlaceholder": {
+    "message": "If you want the Default data, type: {WORD_LIMIT} {MAX_CONTENT_LENGTH} If you want Custom data, type: {wordLimit} , {maxContentLength} and {CONTENT} and enter them"
+  },
+  "maxContentLengthPlaceholder": {
+    "message": "Enter the maximum content length"
+  },
+  "alert_message": {
+    "message": "Custom template saved successfully."
+  },
+  "alert_message1": {
+    "message": "Default template saved successfully."
+  },
+  "status_message": {
+    "message": "Please enter an API here"
+  },
+  "status_message1": {
+    "message": "Configuration saved successfully!'"
+  },
+  "savebutton2": {
+    "message": "Save"
+  },
+  "wordLimitLabel": {
+    "message": "Word limit for summary:"
+  }
 }
