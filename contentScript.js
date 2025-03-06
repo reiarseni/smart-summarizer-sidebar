@@ -27,7 +27,10 @@ class SmartSummarizer {
           <button class="close-button">×</button>
         </div>
         <div class="sidebar-content"></div>
+
+        <a class="btnOpenOptions" href="#">Options</a>
       </div>
+      
     `;
     document.body.appendChild(helpers.createElement(sidebarHTML));
     this.setupEventListeners();
@@ -36,6 +39,13 @@ class SmartSummarizer {
   setupEventListeners() {
     const closeButton = document.querySelector(`#${CONSTANTS.SIDEBAR_ID} .close-button`);
     closeButton.addEventListener('click', () => this.toggleSidebar());
+
+    const optionsButton = document.querySelector(`.btnOpenOptions`);
+    if (optionsButton) {
+      optionsButton.addEventListener('click', (e) => this.openOptionsPage(e))
+    } else {
+      console.error('El botón de opciones no se encontró.');
+    }
   }
 
   async toggleSidebar() {
@@ -46,6 +56,11 @@ class SmartSummarizer {
     }
   }
 
+  async openOptionsPage(e) {
+    e.preventDefault();
+    chrome.runtime.sendMessage({ action: 'openOptionsPage' });
+  }
+  
   async generateSummary() {
     const container = document.querySelector(`#${CONSTANTS.SIDEBAR_ID} .sidebar-content`);
     this.showLoadingState(container);
@@ -130,7 +145,7 @@ class SmartSummarizer {
         // Agrega este evento
         document.getElementById('open-options').addEventListener('click', (e) => {
           e.preventDefault();
-          chrome.runtime.sendMessage({ action: 'openOptions' });
+          chrome.runtime.sendMessage({ action: 'openOptionsPage' });
         }); 
 
     } else {

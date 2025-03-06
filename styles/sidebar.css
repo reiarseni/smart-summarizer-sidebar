@@ -92,6 +92,29 @@
   color: #333;
 }
 
+/* Estilo para el enlace Options */
+.btnOpenOptions {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;     
+  padding: 5px 8px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btnOpenOptions:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
